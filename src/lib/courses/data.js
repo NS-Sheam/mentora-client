@@ -1,5 +1,7 @@
-export const fetchCourses = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/courses`);
+export const fetchCourses = async (searchTerm = '') => {
+  console.log();
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/courses?search=${searchTerm}`);
   const data = await res.json();
   return data || [];
 };

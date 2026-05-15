@@ -13,7 +13,6 @@ import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 
-
 const Hero = () => {
 
     return (

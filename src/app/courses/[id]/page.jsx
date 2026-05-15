@@ -1,4 +1,5 @@
 
+import EnrollmentButton from '@/components/EnrollmentButton';
 import { auth } from '@/lib/auth';
 import { Chip } from '@heroui/react';
 import { BookOpen, Clock, BarChart, Users } from 'lucide-react';
@@ -25,15 +26,16 @@ export default async function CourseDetails({ params }) {
 
 
     const course = await fetchSingleCourse(id, token);
-    const { _id, title, thumbnail, description, category, price, duration, instructor } = course;
+    const { _id, enrollCount, title, thumbnail, description, category, price, duration, instructor } = course;
 
+    // console.log(course);
 
 
     const featuredItems = [
         { icon: Clock, label: duration || '12h 30m' },
         { icon: BarChart, label: title || 'Beginner' },
         { icon: BookOpen, label: `24 Lessons` },
-        { icon: Users, label: `0 Students` },
+        { icon: Users, label: `${enrollCount || 0} Students` },
     ];
     return (
         <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
@@ -112,6 +114,8 @@ export default async function CourseDetails({ params }) {
                                 ))}
                             </ul>
                         </div>
+
+                        <EnrollmentButton course={course} />
                         <p className="text-center text-xs text-slate-500 font-bold">30-Day Money-Back Guarantee • Secure Payment</p>
                     </div>
                 </div>

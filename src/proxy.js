@@ -16,6 +16,6 @@ export async function proxy(request) {
 // export default function proxy(request: NextRequest) { ... }
 
 export const config = {
-  matcher: ['/courses/:id', '/dashboard', '/add-course'],
+  matcher: ['/courses/:id', '/dashboard/:path*', '/add-course'],
 };
 // http://localhost:3000/about/all-path

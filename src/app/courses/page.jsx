@@ -4,8 +4,13 @@ import { fetchCourses } from "@/lib/courses/data";
 import { Button } from "@heroui/react";
 import { BookOpen, Filter } from "lucide-react";
 
-const CoursesPage = async () => {
-    const courses = await fetchCourses();
+const CoursesPage = async ({ searchParams }) => {
+    // console.log(searchParams);
+    const sParams = await searchParams;
+    // console.log(sParams);
+
+
+    const courses = await fetchCourses(sParams?.searchTerm || "");
 
 
     return (

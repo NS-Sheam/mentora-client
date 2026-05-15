@@ -75,7 +75,7 @@ export default async function CourseDetails() {
                             <p className="text-slate-700 font-medium">
                                 <strong>Instructor:</strong>  Industry Expert
                             </p>
-                            <div className="w-full h-[1px] bg-slate-100"></div>
+                            <div className="w-full h-px bg-slate-100"></div>
                             <ul className="space-y-3">
                                 {['Lifetime Access', 'Expert Guidance', 'Verified Certificate'].map((item, i) => (
                                     <li

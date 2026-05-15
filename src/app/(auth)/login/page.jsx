@@ -24,6 +24,9 @@ export default function Login() {
             callbackURL: "/"
         })
 
+
+
+
         if (error) {
             toast.error("Registration failed")
             return;

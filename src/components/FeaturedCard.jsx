@@ -5,6 +5,8 @@ import Link from "next/link";
 
 const FeaturedCard = ({ course }) => {
     const { _id, thumbnail, title, price, category } = course;
+
+
     return (
         <div
             className="group flex flex-col bg-white rounded-3xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"

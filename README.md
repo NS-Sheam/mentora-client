@@ -6,6 +6,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 git clone -b starter https://github.com/NS-Sheam/mentora-client.git
 ```
 
+## clone full work with remaining add, delete and other
+
+```bash
+git clone -b main-with-full https://github.com/NS-Sheam/mentora-client.git
+```
+
 ## Getting Started
 
 First, run the development server:

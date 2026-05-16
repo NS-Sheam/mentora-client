@@ -1,9 +1,21 @@
 "use client";
 
 
+import { deleteEnrollment } from "@/lib/courses/action";
 import { AlertDialog, Button } from "@heroui/react";
+import { useRouter } from "next/navigation";
 
-const CancelEnrollButton = () => {
+const CancelEnrollButton = ({ enrolmentId }) => {
+    const router = useRouter();
+    const handleDeleteEnrollment = async () => {
+
+        const data = await deleteEnrollment(enrolmentId);
+        // console.log(data);
+        if (data?.deletedCount) {
+            router.push("/courses")
+        }
+
+    }
 
     return (
         <AlertDialog>
@@ -39,6 +51,7 @@ const CancelEnrollButton = () => {
                                 slot="close"
                                 color="danger"
                                 className="font-bold"
+                                onPress={handleDeleteEnrollment}
 
                             >
                                 Yes, Cancel
